@@ -8,6 +8,7 @@ namespace KoreanWarzone.Scene
 {
     public class TitleScene : BaseScene
     {
+        private ConsoleKey input;
         public override void Render()
         {
             Console.WriteLine("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
@@ -23,7 +24,7 @@ namespace KoreanWarzone.Scene
         }
         public override void Input()
         {
-            Console.ReadKey(true);
+            input = Console.ReadKey(true).Key;
         }
 
         public override void Update()
@@ -33,7 +34,7 @@ namespace KoreanWarzone.Scene
 
         public override void Result()
         {
-            
+            Game.ChangeScene("UnderGround");
         }
     }
 }

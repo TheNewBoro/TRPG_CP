@@ -15,7 +15,7 @@ namespace KoreanWarzone
 
         private static bool gameOver;
 
-
+        
         public static void Run()
         {
             Start();
@@ -31,6 +31,10 @@ namespace KoreanWarzone
             End();
         }
 
+        public static void ChangeScene(string sceneName)
+        {
+            curScene = sceneDic[sceneName];
+        }
         //게임 시작
         private static void Start()
         {
@@ -40,8 +44,13 @@ namespace KoreanWarzone
             // 씬 설정
             sceneDic = new Dictionary<string, BaseScene>();
             sceneDic.Add("Title", new Scene.TitleScene());
+            sceneDic.Add("UnderGound", new Scene.Underground());
 
             curScene = sceneDic["Title"];
+            curScene = sceneDic["UnderGround"];
+            curScene = sceneDic["Tunnel"];
+            curScene = sceneDic["B1f"];
+            curScene = sceneDic["OnGround"];
         }
 
         private static void End()
